@@ -1,0 +1,12 @@
+# REMOVE PHP FROM URL
+# REMOVE PHP EXTENSION
+RewriteEngine On
+ 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php
+
+
+# DON'T ACCESS assets
+Options All -Indexes
