@@ -1,5 +1,7 @@
 <?php
 
+namespace Controller;
+
 use Util\Crud;
 use Model\CategoriaModel;
 

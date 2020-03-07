@@ -1,5 +1,7 @@
 <?php 
 
+namespace Controller;
+
 use Model\ProdutosModel;
 use Controller\ProdutosTemCategoriaController;
 use Util\Crud;
@@ -70,17 +72,15 @@ class ProdutosController extends Crud
     public function inserir($dados)
     {
         // Primeiro inserir o produtos
-        $insert = $this->produtosModel->inserir($dados);
-
+        $categoria  = '';
+        $insert     = $this->produtosModel->inserir($dados);
+        
         // Pegar o Id, do produto para salvar no produtos_has_categoria
         if($insert[0] >= 1){
-            
-            $this->produtosTemCategoria->inserir( [ $dados['category'] , $insert ] );
-
+            $categoria = $this->produtosTemCategoria->inserir( [ $dados['category'] , $insert[1]] );
         }
 
-
-        var_dump($dados);
+        return $categoria;
     }
 
     public function atualizar($dados)

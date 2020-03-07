@@ -18,22 +18,23 @@ class ProdutosTemCategoriaModel
     public function inserir($dados)
     {
 
+        $sql = $this->conn->prepare("  INSERT INTO produtos_has_categoria (produtos_id_produtos, categoria_id_categoria) VALUES (?, ?) ");
+
         try{
-            
-            $sql = $this->conn->prepare("  INSERT INTO produtos_has_categoria
-                                                        (produtos_id_produtos, categoria_id_categoria)
-                                            VALUES (:id_produtos, :id_categoria) ");
 
+                $this->conn->beginTransaction();
 
-            $sql->bindValue(":id_produtos",$dados[0]);
-            $sql->bindValue(":id_categoria",$dados[1]);
+                    foreach($dados[0] AS $linha){
+                        $sql->execute([$dados[1],$linha]); 
+                    }        
 
-            $sql->execute();
+                $this->conn->commit();    
 
             return $sql->rowCount(); 
 
-        }catch(PDOException $Exception){
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+        }catch(\Exception $Exception){
+            $this->conn->rollback(); 
+            throw $Exception;
         }
 
     }

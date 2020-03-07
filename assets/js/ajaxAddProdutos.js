@@ -13,10 +13,9 @@ $(document).ready(function () {
             url: "../../util/redirect.php",
             data: dados,
             success: function (data) {
-                console.log(data);
                 if (data == 1) {
                     alert('Salvo com Sucesso');
-                    window.location.href = 'categories.html';
+                    window.location.href = 'products.html';
                 } else {
                     alert('Erro, ao salvar');
                 }
@@ -27,8 +26,6 @@ $(document).ready(function () {
     });
 
 });
-
-
 
 function listarCategoria() {
 

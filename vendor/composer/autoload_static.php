@@ -37,6 +37,8 @@ class ComposerStaticInitcb0779a197c713645b62459f2070f399
     );
 
     public static $classMap = array (
+        'Controller\\CategoriaController' => __DIR__ . '/../..' . '/controller/CategoriaController.php',
+        'Controller\\ProdutosController' => __DIR__ . '/../..' . '/controller/ProdutosController.php',
         'Controller\\ProdutosTemCategoriaController' => __DIR__ . '/../..' . '/controller/ProdutosTemCategoriaController.php',
         'Model\\CategoriaModel' => __DIR__ . '/../..' . '/model/CategoriaModel.php',
         'Model\\ProdutosModel' => __DIR__ . '/../..' . '/model/ProdutosModel.php',
