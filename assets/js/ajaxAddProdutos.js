@@ -1,5 +1,7 @@
-
 $(document).ready(function () {
+
+    //Listar
+    listarCategoria();
 
     //Inserir
     $('form').submit(function () {
@@ -11,6 +13,7 @@ $(document).ready(function () {
             url: "../../util/redirect.php",
             data: dados,
             success: function (data) {
+                console.log(data);
                 if (data == 1) {
                     alert('Salvo com Sucesso');
                     window.location.href = 'categories.html';
@@ -23,32 +26,20 @@ $(document).ready(function () {
         return false;
     });
 
-    buscar();
 });
 
 
 
-function buscar() {
-
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var id = url.searchParams.get("id");
-
-    //Setar o valor no id
-    $("#id").val(id);
+function listarCategoria() {
 
     $.ajax({
         type: "POST",
         url: "../../util/redirect.php",
-        data: { "id": id, "acao": "buscar", "nome": "Categoria" },
+        data: { nome: 'Categoria', acao: "listarMultiplo" },
         success: function (data) {
-            var dados = JSON.parse(data);
-
-            $("#category-name").val(dados.nome_categoria);
-            $("#category-code").val(dados.codigo_categoria);
+            $('#category').empty("");
+            $('#category').append(data);
         }
     });
 
 }
-
-// https://tableless.com.br/psr-padrao-para-codigo-php/

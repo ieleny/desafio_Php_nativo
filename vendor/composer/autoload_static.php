@@ -15,6 +15,10 @@ class ComposerStaticInitcb0779a197c713645b62459f2070f399
         array (
             'Model\\' => 6,
         ),
+        'C' => 
+        array (
+            'Controller\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -26,10 +30,17 @@ class ComposerStaticInitcb0779a197c713645b62459f2070f399
         array (
             0 => __DIR__ . '/../..' . '/model',
         ),
+        'Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/controller',
+        ),
     );
 
     public static $classMap = array (
+        'Controller\\ProdutosTemCategoriaController' => __DIR__ . '/../..' . '/controller/ProdutosTemCategoriaController.php',
         'Model\\CategoriaModel' => __DIR__ . '/../..' . '/model/CategoriaModel.php',
+        'Model\\ProdutosModel' => __DIR__ . '/../..' . '/model/ProdutosModel.php',
+        'Model\\ProdutosTemCategoriaModel' => __DIR__ . '/../..' . '/model/ProdutosTemCategoriaModel.php',
         'Util\\Connection' => __DIR__ . '/../..' . '/util/Connection.php',
         'Util\\Crud' => __DIR__ . '/../..' . '/util/Crud.php',
         'Util\\Link' => __DIR__ . '/../..' . '/util/Link.php',

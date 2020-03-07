@@ -6,7 +6,7 @@
 
         const SERVER    = 'mysql:dbname=produtos;host=localhost:3306';
         const USER      = 'root';
-        const SENHA     = 'root';
+        const SENHA     = '';
 
         public static  $instance;   
 

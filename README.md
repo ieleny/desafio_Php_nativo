@@ -21,7 +21,7 @@ Nessa linha retire o #(cerquilha)
 
 Foi utilizado o MySql (MariaDb), scripts no pasta <b> script </b>
 
-# CARREGAR CLASSES NO COMPOSER 
+# CARREGAR CLASSES NO COMPOSER (Autoload)
 
 Executar o comando: <b>composer dump-autoload -o </b>
 

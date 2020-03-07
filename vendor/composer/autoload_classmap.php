@@ -6,7 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Controller\\ProdutosTemCategoriaController' => $baseDir . '/controller/ProdutosTemCategoriaController.php',
     'Model\\CategoriaModel' => $baseDir . '/model/CategoriaModel.php',
+    'Model\\ProdutosModel' => $baseDir . '/model/ProdutosModel.php',
+    'Model\\ProdutosTemCategoriaModel' => $baseDir . '/model/ProdutosTemCategoriaModel.php',
     'Util\\Connection' => $baseDir . '/util/Connection.php',
     'Util\\Crud' => $baseDir . '/util/Crud.php',
     'Util\\Link' => $baseDir . '/util/Link.php',

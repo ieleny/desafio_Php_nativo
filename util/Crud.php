@@ -9,7 +9,7 @@ abstract class Crud
     abstract public function inserir($dados);
     abstract public function buscar($id);
     abstract public function atualizar($dados);
-    abstract public function deletar();
+    abstract public function deletar($id);
 
 }
 

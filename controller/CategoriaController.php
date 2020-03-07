@@ -48,11 +48,24 @@ class CategoriaController extends Crud
 
     public function atualizar($dados)
     {
-
+        return $this->categoriaModel->atualizar($dados);
     }
 
-    public function deletar()
+    public function deletar($id)
     {
+        echo $this->categoriaModel->deletar($id);
+    }
+
+    public function listarMultiplo()
+    {
+        $categorias = $this->categoriaModel->listar();
+        $tbody      = '';
+
+        foreach($categorias AS $dados){
+            $tbody .= " <option>{$dados["nome_categoria"]}</option>";
+        }
+
+        echo $tbody;
 
     }
 
