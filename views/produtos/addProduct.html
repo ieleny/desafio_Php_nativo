@@ -116,23 +116,23 @@
   <form method="POST">
     <div class="input-field">
       <label for="sku" class="label">Product SKU</label>
-      <input type="text" id="sku" class="input-text" name="sku"/>
+      <input type="text" id="sku" class="input-text" name="sku" required/>
     </div>
     <div class="input-field">
       <label for="name" class="label">Product Name</label>
-      <input type="text" id="name" class="input-text" name="name"/>
+      <input type="text" id="name" class="input-text" name="name" required/>
     </div>
     <div class="input-field">
       <label for="price" class="label">Price</label>
-      <input type="text" id="price" class="input-text" name="price"/>
+      <input type="text" id="price" class="input-text" name="price" required/>
     </div>
     <div class="input-field">
       <label for="quantity" class="label">Quantity</label>
-      <input type="text" id="quantity" class="input-text" name="quantity" />
+      <input type="number" id="quantity" class="input-text" name="quantity" required/>
     </div>
     <div class="input-field">
       <label for="category" class="label">Categories</label>
-      <select multiple id="category" class="input-text" name="category[]" >
+      <select multiple id="category" class="input-text" name="category[]" required>
         <option></option>
       </select>
     </div>

@@ -70,6 +70,15 @@ class ProdutosController extends Crud
     public function inserir($dados)
     {
         // Primeiro inserir o produtos
+        $insert = $this->produtosModel->inserir($dados);
+
+        var_dump($insert[0]);
+
+        // Pegar o Id, do produto para salvar no produtos_has_categoria
+        if($insert[0] >= 1){
+            
+        }
+
 
         var_dump($dados);
     }
