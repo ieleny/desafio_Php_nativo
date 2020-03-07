@@ -34,8 +34,8 @@ class CategoriaModel extends Crud
 
             return $sql->rowCount(); 
 
-        }catch(PDOException $Exception){
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+        }catch(\PDOException $Exception){
+            throw new $Exception->getMessage()." ".(int)$Exception->getCode();
         }
     }
 
@@ -49,8 +49,8 @@ class CategoriaModel extends Crud
             $sql->execute();
 
             return $sql->fetch(); 
-        }catch(PDOException $Exception){
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+        }catch(\PDOException $Exception){
+            throw new $Exception->getMessage() ." ". (int)$Exception->getCode();
         }
     }
 
@@ -68,8 +68,8 @@ class CategoriaModel extends Crud
 
             return $sql->rowCount(); 
 
-        }catch(PDOException $Exception){
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+        }catch(\PDOException $Exception){
+            throw new $Exception->getMessage() ." ". (int)$Exception->getCode();
         }
     }
 
@@ -85,8 +85,8 @@ class CategoriaModel extends Crud
 
             return $sql->rowCount(); 
 
-        }catch(PDOException $Exception){
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+        }catch(\PDOException $Exception){
+            throw new $Exception->getMessage() ." ". (int)$Exception->getCode();
         }
 
     }

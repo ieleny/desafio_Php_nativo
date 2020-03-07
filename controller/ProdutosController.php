@@ -86,16 +86,31 @@ class ProdutosController extends Crud
     public function atualizar($dados)
     {
 
+        $atualiza             = $this->produtosModel->atualizar($dados);
+        $produtosTemCategoria = $this->produtosTemCategoria->atualizar($dados);
+
+        //if()
+
+        
     }
 
     public function deletar($id)
     {
+        $produtosTemCategoria = $this->produtosTemCategoria->deletar($id);
+        $produtos = $this->produtosModel->deletar($id);
+
+        if($produtosTemCategoria >= 0 && $produtos >= 0){
+            return 1;
+        }else{
+            return 0;
+        }
 
     }
 
     public function buscar($id)
     {
-        var_dump('teste3');
+        $buscar = $this->produtosModel->buscar($id);
+        echo json_encode($buscar);
     }
 
 }

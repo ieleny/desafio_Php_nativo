@@ -21,12 +21,12 @@ class ProdutosTemCategoriaController
 
     public function atualizar($dados)
     {
-
+        return $this->produtosTemCategoriaModel->atualizar($dados);
     }
 
     public function deletar($id)
     {
-
+        return $this->produtosTemCategoriaModel->deletar($id);
     }
 
     public function buscar($id)

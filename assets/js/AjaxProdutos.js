@@ -33,9 +33,11 @@ function deleteId(id) {
             url: "../../util/redirect.php",
             data: { nome: 'Produtos', acao: "delete" , id: id},
             success: function (data) {
+
+                console.log(data);
                 if (data == 1) {
                     alert('Salvo com Sucesso');
-                    window.location.href = 'categories.html';
+                    window.location.href = 'products.html';
                 } else {
                     alert('Erro, ao salvar');
                 }

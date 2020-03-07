@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `produtos`.`produtos_has_categoria` (
   `categoria_id_categoria` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`produtos_id_produtos`, `categoria_id_categoria`),
   INDEX `fk_produtos_has_categoria_categoria1_idx` (`categoria_id_categoria` ASC) ,
-  INDEX `fk_produtos_has_categoria_produtos_idx` (`produtos_id_produtos` ASC) ,
+  INDEX `fk_produtos_has_categoria_produtos_idx` (`produtos_id_produtos` ASC)
   CONSTRAINT `fk_produtos_has_categoria_produtos`
     FOREIGN KEY (`produtos_id_produtos`)
     REFERENCES `produtos`.`produtos` (`id_produtos`)

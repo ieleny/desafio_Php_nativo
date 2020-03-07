@@ -1,11 +1,11 @@
 <?php
 
-namespace foo;
 require __DIR__. '../../vendor/autoload.php';
 
 
-//Inserir
 if(isset($_POST) && isset($_POST['nome']) && empty($_POST['id']) && !isset($_POST['acao'])){
+
+    //Inserir
 
     $classe = "Controller\\{$_POST["nome"]}Controller";
 
