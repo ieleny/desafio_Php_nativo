@@ -84,12 +84,25 @@ class ProdutosController extends Crud
     }
 
     public function atualizar($dados)
-    {
+    {   
 
-        $atualiza             = $this->produtosModel->atualizar($dados);
-        $produtosTemCategoria = $this->produtosTemCategoria->atualizar($dados);
+        $atualiza = 0;
+        $produtosTemCategoria = 0; 
 
-        //if()
+        //Deletar todos os dados da relação m-n, produtos tem categoria
+        $produtosTemCategoriaDelete = $this->produtosTemCategoria->deletar($dados['id']);
+
+        //Verficar se houve a deleção
+        if($produtosTemCategoriaDelete >= 0){
+                $atualiza             = $this->produtosModel->atualizar($dados);
+                $produtosTemCategoria = $this->produtosTemCategoria->inserir([ $dados['category'] , $dados['id']]);
+        }
+
+        if ($produtosTemCategoriaDelete >= 0 && $atualiza >= 0 && $produtosTemCategoria  >= 0){
+            return 1;  
+        }else{
+            return 0;
+        }
 
         
     }

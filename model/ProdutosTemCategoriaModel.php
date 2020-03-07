@@ -39,30 +39,6 @@ class ProdutosTemCategoriaModel
 
     }
 
-    public function atualizar($dados)
-    {
-
-        $sql = $this->conn->prepare(" INSERT INTO produtos_has_categoria (produtos_id_produtos, categoria_id_categoria) VALUES (?, ?) ");
-
-        try{
-
-                $this->conn->beginTransaction();
-
-                    foreach($dados["category"] AS $linha){
-                        $sql->execute([$dados['id'],$linha]); 
-                    }        
-
-                $this->conn->commit();    
-
-            return $sql->rowCount(); 
-
-        }catch(\Exception $Exception){
-            $this->conn->rollback(); 
-            throw $Exception;
-        }
-
-    }
-
     public function deletar($id)
     {
         try{
