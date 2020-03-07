@@ -14,17 +14,17 @@ class ProdutosTemCategoriaController
     }
 
 
-    protected function inserir($dados)
+    public function inserir($dados)
+    {
+        return $this->produtosTemCategoriaModel->inserir($dados);
+    }
+
+    public function atualizar($dados)
     {
 
     }
 
-    protected function atualizar($dados)
-    {
-
-    }
-
-    protected function deletar($id)
+    public function deletar($id)
     {
 
     }

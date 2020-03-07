@@ -8,12 +8,12 @@ class ProdutosController extends Crud
 {
 
     private $produtosModel;
-    private $produtosHasCategoria;
+    private $produtosTemCategoria;
     
     public function __construct()
     {
         $this->produtosModel        = new ProdutosModel();
-        $this->produtosHasCategoria = new ProdutosTemCategoriaController();
+        $this->produtosTemCategoria = new ProdutosTemCategoriaController();
     }
 
 
@@ -46,7 +46,7 @@ class ProdutosController extends Crud
 
                 $tbody .= " <td class=data-grid-td>";            
 
-                foreach($this->produtosHasCategoria->buscar($produtos['id_produtos']) AS $categoria){
+                foreach($this->produtosTemCategoria->buscar($produtos['id_produtos']) AS $categoria){
                     $tbody .= " <span class=data-grid-cell-content>{$categoria['nome_categoria']}</span>";
                 }
 
@@ -72,11 +72,11 @@ class ProdutosController extends Crud
         // Primeiro inserir o produtos
         $insert = $this->produtosModel->inserir($dados);
 
-        var_dump($insert[0]);
-
         // Pegar o Id, do produto para salvar no produtos_has_categoria
         if($insert[0] >= 1){
             
+            $this->produtosTemCategoria->inserir( [ $dados['category'] , $insert ] );
+
         }
 
 

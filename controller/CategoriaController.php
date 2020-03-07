@@ -62,7 +62,7 @@ class CategoriaController extends Crud
         $tbody      = '';
 
         foreach($categorias AS $dados){
-            $tbody .= " <option>{$dados["nome_categoria"]}</option>";
+            $tbody .= " <option value={$dados["id_categoria"]}>{$dados["nome_categoria"]}</option>";
         }
 
         echo $tbody;
