@@ -19,6 +19,7 @@ Nessa linha retire o #(cerquilha)
  - Composer 
  - PDO
  - JQUERY
+ - AJAX
 
 # Banco de Dados
 
