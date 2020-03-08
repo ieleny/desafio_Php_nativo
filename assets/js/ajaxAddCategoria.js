@@ -51,4 +51,3 @@ function buscar() {
 
 }
 
-// https://tableless.com.br/psr-padrao-para-codigo-php/

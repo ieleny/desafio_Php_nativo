@@ -2,6 +2,9 @@
 
 # Como executar
 
+Acesse no localhost esse link:
+http://localhost/desafio_Php_nativo/
+
 # Servidor Apache 
 
 Foi utilizado a URL amigavel, então é preciso seguir alguns passos. 
