@@ -2,6 +2,10 @@
 
 # Como executar
 
+1 - Executar os scripts que está na pasta script
+2 - Dê um composer Install
+3 - Modifique a conexão do banco no seguinte caminho util/connection.php
+
 Acesse no localhost esse link:
 http://localhost/desafio_Php_nativo/
 
